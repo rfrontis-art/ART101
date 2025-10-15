@@ -1,9 +1,0 @@
-BODY { background: #d2e5d9; padding: 50px;}
-H1, H2, H3, H4 {color: #3a0b92; font-family: sans-serif;}
-#mypic {width: 500px;}
-#introduction h2 { font-style: italic; font-size: 200%;}
-#introduction p { font-size: 120%;}
-#navigation {
-display: flex;
-gap: 20px;
-}
