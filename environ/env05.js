@@ -36,6 +36,12 @@ $("#mb").click(function(){
         inverted = false;
     }
 });
+$("#mb").hover(function(){
+    $(this).css("filter", "brightness(1.3)");
+}, function(){
+$(this).css("filter", "brightness(1)");
+});
+
 $("#depeche").css("cursor", "pointer");
 let scrambled = false 
 $("#depeche").click(function(){
@@ -50,6 +56,60 @@ $("#depeche").click(function(){
     }
 });
 $("#depeche").hover(function(){
+    $(this).css("filter", "brightness(1.3)");
+}, function(){
+$(this).css("filter", "brightness(1)");
+});
+
+$("#okradio").css("cursor", "pointer");
+let gray = false
+$("#okradio").click(function(){
+ if (gray === false){
+    $("html").css("filter", "grayscale(100%)");
+    gray = true;
+ } else {
+    $("html").css("filter", "grayscale(0%)");
+    gray = false;
+ }
+});
+$("#okradio").hover(function(){
+    $(this).css("filter", "brightness(1.3)");
+}, function(){
+$(this).css("filter", "brightness(1)");
+});
+
+$("#daft").css("cursor", "pointer");
+const style = document.createElement("style");
+style.innerHTML = `
+@keyframes driftJS {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(10px); }
+}
+`;
+document.head.appendChild(style);
+let drifting = false
+$("#daft").click(function() {
+
+  const all = document.querySelectorAll("*"); 
+
+  if (!drifting) {
+    let delay = 0;
+
+    all.forEach(el => {
+      el.style.animation = `driftJS 3s ${delay}s ease-in-out infinite alternate`;
+      delay += 0.1; 
+    });
+
+    drifting = true;} else {
+
+    all.forEach(el => {
+      el.style.animation = ""; 
+    });
+
+    drifting = false;
+  }
+});
+$("#daft").hover(function(){
     $(this).css("filter", "brightness(1.3)");
 }, function(){
 $(this).css("filter", "brightness(1)");
