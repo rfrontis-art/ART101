@@ -114,3 +114,26 @@ $("#daft").hover(function(){
 }, function(){
 $(this).css("filter", "brightness(1)");
 });
+
+$(document).on("keydown", function(e) {
+    if (e.key === "p") {
+        $("#plastic").css("filter", "brightness(1.3)");
+    }
+});
+$(document).on("keyup", function(e) {
+    if (e.key === "p") {
+        $("#plastic").css("filter", "brightness(1)");
+    }
+});
+let filterOn = false
+$(document).on("keydown", function (e) {
+    if(e.shiftKey && e.key.toLowerCase() === "p"){
+        filterOn = !filterOn;
+        if(filterOn){
+            $("html").css("filter", "contrast(200%) saturate(150%) blur(1px) brightness(80%) hue-rotate(-20deg)");
+        }
+        else{
+            $("html").css("filter", "none");
+        }
+    }
+});
